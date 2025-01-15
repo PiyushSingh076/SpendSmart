@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Hatran&family=Playwrite+IN:wght@100..400&display=swap');
+@import 'react-toastify/dist/ReactToastify.css';
+
 :root {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;

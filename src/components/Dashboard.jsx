@@ -1,9 +1,15 @@
 import React from 'react';
+import Header from './header';
+import './Dashboard.css'; 
+import Cards from './Cards';
 
-function dashboard(){
-    return <div >
-        dashboard
-    </div>
+function Dashboard() {
+    return (
+        <div className='dashBoard'>
+            <Header />
+            <Cards />
+        </div>
+    );
 }
 
-export default dashboard
+export default Dashboard;
