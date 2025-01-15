@@ -1,0 +1,101 @@
+.transaction-table {
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.transaction-table table {
+  width: 100%;
+  border-collapse: collapse;
+  transition: all 0.3s ease;
+}
+
+.transaction-table table th,
+.transaction-table table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #333;
+}
+
+.transaction-table table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  position: relative;
+}
+
+.transaction-table table th:hover {
+  background-color: #e9e9e9;
+  cursor: pointer;
+}
+
+.transaction-table table th::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #666;
+  margin-left: 10px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transaction-table table th.sort-asc::after {
+  transform: translateY(-50%) rotate(180deg);
+  opacity: 1;
+}
+
+.transaction-table table th.sort-desc::after {
+  transform: translateY(-50%) rotate(0deg);
+  opacity: 1;
+}
+
+.transaction-table table tr:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.transaction-table table td {
+  background-color: #fff;
+}
+
+.transaction-table table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+/* Animation for sorting arrow */
+.transaction-table table th.sort-asc::after,
+.transaction-table table th.sort-desc::after {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.edit-btn, .delete-btn {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  opacity: 0.8;
+}

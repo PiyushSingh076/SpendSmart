@@ -1,0 +1,83 @@
+/* Modal Styles */
+.custom-modal {
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Input Fields */
+.custom-input,
+.custom-datepicker {
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-input:focus,
+.custom-datepicker:focus,
+.select-input-2:focus {
+  border-color: #6200ea;
+  box-shadow: 0 0 5px rgba(98, 0, 234, 0.5);
+  outline: none;
+}
+
+/* Button Styles */
+.btn {
+  background-color: #d50b0b;  /* Red background */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 12px 16px;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b22222;  /* Darker red on hover */
+  border-color: #b22222;
+}
+
+.btn:focus {
+  background-color: #8b0000;  /* Even darker red on focus */
+  border-color: #b22222;
+  box-shadow: 0 0 6px rgba(139, 0, 0, 0.5);
+}
+
+/* Select Input */
+.select-input-2 {
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.select-input-2:hover {
+  border-color: #6200ea;
+}
+
+.select-input-2:focus {
+  border-color: #7c4dff;
+  box-shadow: 0 0 5px rgba(98, 0, 234, 0.5);
+}
+
+/* Title & Form Item Styles */
+.form-title {
+  font-weight: 600;
+}
+
+.form-item {
+  margin-bottom: 16px;
+}
+
+.form-item label {
+  font-weight: 600;
+}
