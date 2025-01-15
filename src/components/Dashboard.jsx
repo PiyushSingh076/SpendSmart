@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import './Dashboard.css';
 import Cards from './Cards';
-import AddExpenseModal from './Modals/addExpense';
-import AddIncomeModal from './Modals/addIncome';
+
 import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db } from './firebase';
 import moment from 'moment';
 import { addDoc, collection, query, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import TransactionTable from './TransactionTable'; 
+import AddIncomeModal from './AddIncome';
+import AddExpenseModal from './AddExpense';
 
 function Dashboard() {
   const [user] = useAuthState(auth);
