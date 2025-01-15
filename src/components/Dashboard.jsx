@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Header from './header';
+import Header from './Header';
 import './Dashboard.css';
 import Cards from './Cards';
 import AddExpenseModal from './Modals/addExpense';
