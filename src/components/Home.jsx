@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './header';
 import Signup from './Signup';
+import Header from './Header';
 
 function home(){
     return <div>
