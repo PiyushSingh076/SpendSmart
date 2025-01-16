@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./TransactionTable.css";
 
-function TransactionTable({ transactions, loading, onDelete }) {
+function TransactionTable({ transactions, loading, onDelete, onUpdate }) {
   const [sortOrder, setSortOrder] = useState({ column: null, direction: "asc" });
 
   const handleSort = (column) => {
@@ -58,6 +58,12 @@ function TransactionTable({ transactions, loading, onDelete }) {
                       className="delete-btn"
                     >
                       Delete
+                    </button>
+                    <button
+                      onClick={() => onUpdate(transaction.id)}
+                      className="update-btn"
+                    >
+                      Update
                     </button>
                   </td>
                 </tr>
