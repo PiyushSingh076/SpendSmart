@@ -145,16 +145,15 @@ function Dashboard() {
         onFinish={(values) => onFinish(values, 'income')}
       />
 
-      {/* Button to toggle the transaction table */}
+      {/*toggle the transaction table */}
       <button onClick={toggleTransactionTable} className="show-transactions-btn">
         {showTransactions ? 'Hide Transactions' : 'Show Transactions'}
       </button>
 
-      {/* Display the TransactionTable component */}
       {showTransactions && <TransactionTable 
         transactions={transactions} 
         loading={loading} 
-        onDelete={deleteTransaction}  // Only delete functionality is passed
+        onDelete={deleteTransaction}  
       />}
     </div>
   );

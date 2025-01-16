@@ -73,7 +73,7 @@
   background-color: #f9f9f9;
 }
 
-/* Animation for sorting arrow */
+
 .transaction-table table th.sort-asc::after,
 .transaction-table table th.sort-desc::after {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -98,4 +98,23 @@
 
 .edit-btn:hover, .delete-btn:hover {
   opacity: 0.8;
+}
+.sort-buttons {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.sort-btn {
+  padding: 8px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sort-btn:hover {
+  background-color: #3b893e;
 }

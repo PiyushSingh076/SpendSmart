@@ -1,14 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import "./Header.css";
 
 function Header() {
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate(); 
 
   function logoutFunc() {
     alert("Logout successful!");
-    // Redirect to the home page (login page or main page) after logout
-    navigate('/'); // Home page, adjust the path as needed
+    navigate('/'); 
   }
 
   return (

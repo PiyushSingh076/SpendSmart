@@ -1,83 +1,72 @@
 import React from "react";
 import "./AddExpenseModal.css";
-import {
-  Card,
-  Col,
-  Row,
-  Button,
-  Modal,
-  Form,
-  Input,
-  DatePicker,
-  Select,
-} from "antd";
 
 function AddExpenseModal({
   isExpenseModalVisible,
   handleExpenseCancel,
   onFinish,
 }) {
-  const [form] = Form.useForm();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const values = Object.fromEntries(formData.entries());
+    values.amount = parseFloat(values.amount);
+    onFinish(values);
+    e.target.reset();
+  };
+
+  if (!isExpenseModalVisible) return null;
+
   return (
-    <Modal
-      title="Add Expense"
-      visible={isExpenseModalVisible}
-      onCancel={handleExpenseCancel}
-      footer={null}
-      className="custom-modal"
-    >
-      <Form
-        form={form}
-        layout="vertical"
-        onFinish={(values) => {
-          onFinish(values, "expense");
-          form.resetFields();
-        }}
-      >
-        <Form.Item
-          label="Name"
-          name="name"
-          rules={[
-            {
-              required: true,
-              message: "Please input the name of the transaction!",
-            },
-          ]}
-        >
-          <Input type="text" className="custom-input" />
-        </Form.Item>
-        <Form.Item
-          label="Amount"
-          name="amount"
-          rules={[{ required: true, message: "Please input the expense amount!" }]}
-        >
-          <Input type="number" className="custom-input" />
-        </Form.Item>
-        <Form.Item
-          label="Date"
-          name="date"
-          rules={[{ required: true, message: "Please select the expense date!" }]}
-        >
-          <DatePicker className="custom-input" format="YYYY-MM-DD" />
-        </Form.Item>
-        <Form.Item
-          label="Tag"
-          name="tag"
-          rules={[{ required: true, message: "Please select a tag!" }]}
-        >
-          <Select className="select-input-2">
-            <Select.Option value="food">Food</Select.Option>
-            <Select.Option value="education">Education</Select.Option>
-            <Select.Option value="office">Office</Select.Option>
-          </Select>
-        </Form.Item>
-        <Form.Item>
-          <Button className="btn" htmlType="submit">
-            Add Expense
-          </Button>
-        </Form.Item>
-      </Form>
-    </Modal>
+    <div className="modal-overlay">
+      <div className="modal-container">
+        <h2>Add Expense</h2>
+        <form className="expense-form" onSubmit={handleSubmit}>
+          <label htmlFor="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter Reciever's name"
+            required
+          />
+
+          <label htmlFor="amount">Amount</label>
+          <input
+            id="amount"
+            name="amount"
+            type="number"
+            placeholder="Enter amount"
+            required
+          />
+
+          <label htmlFor="date">Date</label>
+          <input id="date" name="date" type="date" required />
+
+          <label htmlFor="tag">Tag</label>
+          <input
+            id="tag"
+            name="tag"
+            type="text"
+            placeholder="Enter tag"
+            required
+          />
+
+          <div className="modal-buttons">
+            <button
+              type="button"
+              className="btn-cancel"
+              onClick={handleExpenseCancel}
+            >
+              Cancel
+            </button>
+            <button type="submit" className="btn-submit">
+              Add Expense
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 

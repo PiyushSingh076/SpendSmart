@@ -1,78 +1,94 @@
-import React from "react";
-import { Modal, Form, Input, DatePicker, Select, Button } from "antd";
-import "./AddIncomeModal.css"; // Custom CSS for consistent theming
+import React, { useState } from "react";
+import "./AddIncomeModal.css";
 
 function AddIncomeModal({
   isIncomeModalVisible,
   handleIncomeCancel,
   onFinish,
 }) {
-  const [form] = Form.useForm();
+  const [formData, setFormData] = useState({
+    name: "",
+    amount: "",
+    date: "",
+    tag: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onFinish(formData, "income");
+    setFormData({ name: "", amount: "", date: "", tag: "" });
+  };
 
   return (
-    <Modal
-      title="Add Income"
-      visible={isIncomeModalVisible}
-      onCancel={() => {
-        form.resetFields();
-        handleIncomeCancel();
-      }}
-      footer={null}
-      centered
-      className="custom-modal"
-    >
-      <Form
-        form={form}
-        layout="vertical"
-        onFinish={(values) => {
-          onFinish(values, "income");
-          form.resetFields();
-        }}
-        className="custom-form"
-      >
-        <Form.Item
-          label="Name"
-          name="name"
-          rules={[{ required: true, message: "Please input the name of the transaction!" }]}
-        >
-          <Input placeholder="Enter transaction name" className="custom-input" />
-        </Form.Item>
+    isIncomeModalVisible && (
+      <div className="modal-overlay">
+        <div className="modal-container">
+          <h2>Add Income</h2>
+          <form onSubmit={handleSubmit} className="income-form">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter transaction name"
+              required
+            />
 
-        <Form.Item
-          label="Amount"
-          name="amount"
-          rules={[{ required: true, message: "Please input the income amount!" }]}
-        >
-          <Input type="number" placeholder="Enter amount" className="custom-input" />
-        </Form.Item>
+            <label htmlFor="amount">Amount</label>
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              value={formData.amount}
+              onChange={handleChange}
+              placeholder="Enter amount"
+              required
+            />
 
-        <Form.Item
-          label="Date"
-          name="date"
-          rules={[{ required: true, message: "Please select the income date!" }]}
-        >
-          <DatePicker format="YYYY-MM-DD" className="custom-datepicker" />
-        </Form.Item>
+            <label htmlFor="date">Date</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              required
+            />
 
-        <Form.Item
-          label="Tag"
-          name="tag"
-          rules={[{ required: true, message: "Please select a tag!" }]}
-        >
-          <Select placeholder="Select a tag" className="custom-select">
-            <Select.Option value="salary">Salary</Select.Option>
-            <Select.Option value="freelance">Freelance</Select.Option>
-            <Select.Option value="investment">Investment</Select.Option>
-          </Select>
-        </Form.Item>
+            <label htmlFor="tag">Tag</label>
+            <input
+              type="text"
+              id="tag"
+              name="tag"
+              value={formData.tag}
+              onChange={handleChange}
+              placeholder="Enter tag"
+              required
+            />
 
-        <Form.Item>
-          <Button type="primary" htmlType="submit" className="custom-button">
-            Add Income
-          </Button>
-        </Form.Item>
-      </Form>
-    </Modal>
+            <div className="modal-buttons">
+              <button
+                type="button"
+                onClick={handleIncomeCancel}
+                className="btn-cancel"
+              >
+                Cancel
+              </button>
+              <button type="submit" className="btn-submit">
+                Add Income
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    )
   );
 }
 
