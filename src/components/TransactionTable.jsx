@@ -48,7 +48,7 @@ function TransactionTable({ transactions, loading, onDelete, onUpdate }) {
               {transactions.map((transaction) => (
                 <tr key={transaction.id}>
                   <td>{transaction.name}</td>
-                  <td>${transaction.amount}</td>
+                  <td>₹{transaction.amount}</td>
                   <td>{transaction.date}</td>
                   <td>{transaction.tag}</td>
                   <td>{transaction.type}</td>

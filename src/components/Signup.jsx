@@ -3,7 +3,6 @@ import "./Signup.css";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { toast } from 'react-toastify';
 import { auth, db,doc,provider,setDoc } from './firebase';
-
 import Login from './Login';
 import { getDoc } from 'firebase/firestore';
 import { GoogleAuthProvider } from 'firebase/auth/web-extension';
