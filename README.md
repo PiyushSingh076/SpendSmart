@@ -63,3 +63,10 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 For any questions or inquiries, please contact Piyush Singh at piyush1071singh@gmail.com.
 
+## SnapShots
+![image](https://github.com/user-attachments/assets/ba32eb5e-f832-4682-b6e8-26339d074418)
+
+![image](https://github.com/user-attachments/assets/de7bd4d2-1fe5-46ee-93fa-497ea1260738)
+
+
+
