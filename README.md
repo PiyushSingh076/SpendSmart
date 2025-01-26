@@ -61,10 +61,5 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 ## Contact
 
-For any questions or inquiries, please contact Piyush Singh at [email protected].
+For any questions or inquiries, please contact Piyush Singh at piyush1071singh@gmail.com.
 
-**Note:**
-
-* This README is a basic template and can be further customized based on the specific features and functionalities of the SpendSmart app.
-* You can add more sections like "Screenshots," "Deployment," "Testing," etc., if applicable.
-* Replace the placeholder information with actual details about the app.
