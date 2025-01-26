@@ -35,7 +35,7 @@ This is a React-based personal finance management application that helps users t
    ```bash
    npm run dev
    ```
-
+2. Access the app : https://spend-smart-603z9htu2-piyushsingh076s-projects.vercel.app/
 ## Usage
 
 1. **Create an account:** Register a new account or log in with an existing one.
