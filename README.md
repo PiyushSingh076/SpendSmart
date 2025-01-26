@@ -50,6 +50,8 @@ This is a React-based personal finance management application that helps users t
 * React
 * JavaScript
 * CSS
+* Firebase
+* Ant-design
 
 ## Contributing
 
