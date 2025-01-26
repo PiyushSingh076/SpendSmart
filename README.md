@@ -1,5 +1,5 @@
 
-# SpendSmart App
+# SmartSpend 
 
 This is a React-based personal finance management application that helps users track their income and expenses.
 
