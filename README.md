@@ -1,6 +1,4 @@
-Here's a README file for the SpendSmart app, based on the provided image and common practices:
 
-```markdown
 # SpendSmart App
 
 This is a React-based personal finance management application that helps users track their income and expenses.
@@ -18,7 +16,7 @@ This is a React-based personal finance management application that helps users t
 
 1. Clone the repository:
    ```bash
-   git clone [invalid URL removed]
+   git clone https://github.com/PiyushSingh076/SpendSmart.git
    ```
 
 2. Navigate to the project directory:
